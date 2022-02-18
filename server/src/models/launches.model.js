@@ -92,7 +92,11 @@ async function existsLaunchWithId(launchId) {
 }
 
 async function getAllLaunches(skip, limit) {
-  return await launches.find({}).skip(skip).limit(limit);
+  return await launches
+    .find({})
+    .sort({ flightNumber: 1 })
+    .skip(skip)
+    .limit(limit);
 }
 
 async function getlatestFlightNumber() {
