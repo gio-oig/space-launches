@@ -1,8 +1,9 @@
 const http = require("http");
+require("dotenv").config();
+
 const app = require("./app");
 
 const { loadLaunchesData } = require("./models/launches.model");
-
 const { loadPlanetsData } = require("./models/planets.models");
 const { mongoConnect } = require("./services/mongo");
 
