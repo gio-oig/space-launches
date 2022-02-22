@@ -10,7 +10,8 @@
     "deploy-cluster": "npm run build --prefix client && npm run cluster --prefix server",
     "watch": "npm run server & npm run client",
     "winWatch": "concurrently --kill-others \"npm run server\" \"npm run client\"",
-    "test": "npm test --prefix server"
+    "test": "npm test --prefix server",
+    "install": "npm install --prefix client && --prefix server"
   },
   "keywords": [],
   "author": "",
