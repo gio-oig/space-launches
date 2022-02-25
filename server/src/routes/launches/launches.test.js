@@ -1,10 +1,12 @@
 const request = require("supertest");
 const app = require("../../app");
+const { loadPlanetsData } = require("../../models/planets.models");
 const { mongoConnect, mongoDisconnect } = require("../../services/mongo");
 
 describe("Launches API", () => {
   beforeAll(async () => {
     await mongoConnect();
+    await loadPlanetsData();
   });
 
   afterAll(async () => {
@@ -27,13 +29,13 @@ describe("Launches API", () => {
       mission: "ZTM155",
       rocket: "ZTM Explorer IS1",
       launchDate: "January 17, 2030",
-      target: "Kepler-186 f",
+      target: "Kepler-309 c",
     };
 
     const launchDataWithoutDate = {
       mission: "ZTM155",
       rocket: "ZTM Explorer IS1",
-      target: "Kepler-186 f",
+      target: "Kepler-309 c",
     };
 
     const launchWithInvalidDate = {

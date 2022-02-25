@@ -29,6 +29,7 @@
     "jest": "^27.5.1",
     "mongose": "^0.0.2-security",
     "morgan": "^1.10.0",
+    "nasa_project": "file:..",
     "pm2": "^5.1.2"
   }
 }
