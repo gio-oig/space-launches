@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x, 16.x]
-        mongodb-version: ['4.4']
+        mongodb-version: ["4.4"]
     steps:
       - uses: actions/checkout@v2
       - name: Use node js version ${{ matrix.node-version }}
@@ -22,8 +22,8 @@ jobs:
           node-version: ${{ matrix.node-version }} # Runs a set of commands using the runners shell
       - name: MongoDB in GitHub Actions
         uses: supercharge/mongodb-github-action@1.7.0
-        with: 
+        with:
           mongodb-version: ${{ matrix.mongodb-version }}
-        run: npm install
-        run: npm run build --prefix client
-        run: npm test
+      - run: npm install
+      - run: npm run build --prefix client
+      - run: npm test
